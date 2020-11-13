@@ -1,12 +1,10 @@
 ---
 # tasks file for multi_vault_test
 
-- include_vars:
-    name: "{{ item }}"
-  loop:
-    - "vars/sudo_pass.yml"
-    - "vars/msg.yml"
-    
+- include_vars: sudo_pass.yml
+
+- include_vars: msg.yml
+
 - name: Debug Vaulted Creds
   debug:
     var: item
