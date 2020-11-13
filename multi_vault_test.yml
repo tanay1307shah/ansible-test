@@ -1,0 +1,5 @@
+---
+- name: Multi Vault Files Test
+  hosts: all
+  roles:
+    - multi_vault_test

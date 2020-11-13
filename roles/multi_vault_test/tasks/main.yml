@@ -1,0 +1,9 @@
+---
+# tasks file for multi_vault_test
+
+- name: Debug Vaulted Creds
+  debug:
+    var: item
+  loop:
+    - "{{ awxsvc_pass }}"
+    - "{{ msg }}"
