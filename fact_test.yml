@@ -12,7 +12,12 @@
   tasks:
     - set_fact:
         ip: "{{ item.ip }}"
-        cacheable: true
       delegate_to: "{{ item.name }}"
       delegate_facts: yes
       loop: "{{ host_list }}"
+
+    - debug:
+        var: hostvars.host1.ansible_facts.ip
+
+    - debug:
+      var: hostvars.host1.ip
