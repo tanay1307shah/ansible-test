@@ -1,0 +1,17 @@
+---
+- name: Fact Test
+  hosts: localhost
+  vars:
+    host_list:
+      - name: host1
+        ip: host1.redhat.com
+      - name: host2
+        ip: host2.redhat.com
+      - name: host3
+        ip: host3.redhat.com
+  tasks:
+    - set_fact:
+        ip: "{{ item.ip }}"
+      delegate_to: "{{ item.name }}"
+      delegate_facts: yes
+      loop: "{{ host_list }}"
