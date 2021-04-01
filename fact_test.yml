@@ -20,4 +20,4 @@
         var: hostvars.host1.ansible_facts.ip
 
     - debug:
-        var: hostvars.host1.ip
+        var: inventory_file
