@@ -3,9 +3,9 @@
   vars:
     os: windows
   collections:
-    - ansible.tower
+    - tower
   tasks:
-    - ansible.tower.tower_inventory:
+    - tower.tower_inventory:
         validate_certs: no
         tower_host: 192.168.0.124
         tower_username: admin
