@@ -1,0 +1,25 @@
+- hosts: localhost
+  vars:
+    # env: dev_123
+    # os: rh
+    # dev_123:
+    #   rh: helllo
+    # storage: '100'
+    max_-_storage: 300
+    t_c: '4096'
+    m_c: 16448
+  tasks:
+    # - set_fact:
+    #     num_list: "{{ num_list | debug([]) + [item | int ] }}"
+    #   loop: "{{ storage.split(',') | list }}"
+      #   list_alias: "{{ list_alias | default([]) + [vm+'.' + item] }}"
+      # loop: "{{ alias }}"
+    - debug:
+        var: max_-_storage
+    # - debug:
+    #     var: storage.split(',') | map('int') | list | sum
+      
+    # - fail:
+    #   when: ((storage.split(',') | map('int') | list | sum) > max_storage) or (t_c | int > m_c)
+
+      

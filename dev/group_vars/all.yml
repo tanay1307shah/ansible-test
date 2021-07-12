@@ -1,1 +1,5 @@
 datastore: pure_storage
+rhel:
+  cluster: rhel_cluster
+windows:
+  cluster: windows_cluster

@@ -1,0 +1,19 @@
+---
+- hosts: all
+  vars:
+    os: windows
+  collections:
+    - ansible.tower
+  tasks:
+    - ansible.tower.tower_inventory:
+        validate_certs: no
+        tower_host: 192.168.0.124
+        tower_username: admin
+        tower_password: redhat
+        name: "Collection test"
+        organization: Default
+
+    # - set_fact:
+    #     machine_info: "{{ lookup('vars',os) }}"
+    # - debug:
+    #     var: datastore
