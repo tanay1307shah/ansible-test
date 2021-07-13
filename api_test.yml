@@ -1,0 +1,16 @@
+- hosts: localhost
+  # vars:
+  #   name: tanay
+  #   env: dev
+  #   site: LA 
+  #   alias:
+  #     - shah
+  #     - tsh
+  tasks:
+    - debug:
+        msg: "{{ item }}"
+      loop:
+        - "{{ name }}"
+        - "{{ env }}"
+        - "{{ site }}"
+        - "{{ alias }}"
