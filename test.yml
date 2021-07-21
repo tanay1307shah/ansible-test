@@ -18,16 +18,15 @@
       #   list_alias: "{{ list_alias | default([]) + [vm+'.' + item] }}"
       # loop: "{{ alias }}"
     - set_fact:
-        curr_hosts: "{{ groups[ostype] }}"
+        curr_hosts: "{{ groups[ostype] + [ new_host ] }}"
+    
 
     - ansible.tower.tower_group:
         inventory: test
         name: "{{ ostype }}"
         state: present
         validate_certs: no
-        hosts:
-          - "{{ new_host }}"
-          - "{{ curr_hosts }}"
+        hosts: "{{ curr_hosts }}"
     # - debug:
     #     var: storage.split(',') | map('int') | list | sum
       
