@@ -18,7 +18,7 @@
       #   list_alias: "{{ list_alias | default([]) + [vm+'.' + item] }}"
       # loop: "{{ alias }}"
     - set_fact:
-        curr_hosts: groups[ostype]
+        curr_hosts: "{{ groups[ostype] }}"
 
     - ansible.tower.tower_group:
         inventory: test
