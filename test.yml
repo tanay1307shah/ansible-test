@@ -27,8 +27,8 @@
         state: present
         validate_certs: no
         hosts: "{{ curr_hosts }}"
-    # - debug:
-    #     var: storage.split(',') | map('int') | list | sum
+    - debug:
+        var: storage.split(',') | map('int') | list | sum
       
     # - fail:
     #   when: ((storage.split(',') | map('int') | list | sum) > max_storage) or (t_c | int > m_c)
